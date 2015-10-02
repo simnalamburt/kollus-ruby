@@ -11,13 +11,13 @@ class Kollus
   def media(media_content_key, media_profile_key = nil, awt_code = nil, expire_time = 7200, play_list = nil)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_media_link_by_userid?access_token=' + @token)
     params = {
-      'client_user_id' => @id,
-      'security_key' => @key,
-      'media_content_key' => media_content_key,
-      'media_profile_key' => media_profile_key,
-      'awt_code' => awt_code,
-      'expire_time' => expire_time,
-      'play_list' => play_list
+      client_user_id: @id,
+      security_key: @key,
+      media_content_key: media_content_key,
+      media_profile_key: media_profile_key,
+      awt_code: awt_code,
+      expire_time: expire_time,
+      play_list: play_list
     }
 
     response = Net::HTTP.post_form(api_uri, params)
