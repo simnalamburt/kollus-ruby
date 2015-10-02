@@ -5,9 +5,9 @@ require_relative 'api'
 api_token = YAML.load_file('secret.yml')['api_token']
 account_id = 'test'
 account_key = 'catenoid-sample'
-media_content_key = '7MscjbVl'
-media_profile_key = nil
-awt_code = nil
 
-media_token1 = kollus_media_link_by_userid_api(api_token, account_key, media_content_key, media_profile_key, awt_code, account_id)
+media_token1 = media_link(api_token, account_id, account_key, '7MscjbVl')
+media_token2 = media_link(api_token, account_id, account_key, 'Kcrbjc2S')
+
 puts media_token1
+puts media_token2
