@@ -7,7 +7,6 @@ token = YAML.load_file('secret.yml')['api_token']
 kollus = Kollus.new 'test', 'catenoid-sample', token
 
 get '/' do
-  foo = 'asdf'
   erb :index, locals: {
     media_token1: kollus.media('7MscjbVl'),
     media_token2: kollus.media('Kcrbjc2S')
