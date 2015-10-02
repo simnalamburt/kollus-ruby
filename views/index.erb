@@ -13,10 +13,10 @@
   <div id="Div3" style="border:solid;">
     <ol>
       <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= media_token1 %>">Sample1</a>
+        <a href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>">Sample1</a>
       </li>
       <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= media_token2 %>">Sample2</a>
+        <a href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>">Sample2</a>
       </li>
     </ol>
   </div>
@@ -27,10 +27,10 @@
   <div id="Div2" style="border:solid;">
     <ol>
       <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= media_token1 %>&download&title=asdfasdf">Sample1</a>
+        <a href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&download&title=asdfasdf">Sample1</a>
       </li>
       <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= media_token2 %>&download">Sample2</a>
+        <a href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&download">Sample2</a>
       </li>
     </ol>
   </div>
@@ -41,10 +41,10 @@
   <div id="Div4" style="border:solid;">
     <ol>
       <li>
-        <a href="javascript:void(0);" onclick="call_player('path', '<%= media_token1 %>');">Sample1</a>
+        <a href="javascript:void(0);" onclick="call_player('path', '<%= @media_token1 %>');">Sample1</a>
       </li>
       <li>
-        <a href="javascript:void(0);" onclick="call_player('path', '<%= media_token2 %>');">Sample2</a>
+        <a href="javascript:void(0);" onclick="call_player('path', '<%= @media_token2 %>');">Sample2</a>
       </li>
     </ol>
   </div>
@@ -57,12 +57,12 @@
       <a href="javascript:void(0);" onclick="start_downloads();"><font color=red>선택 다운로드</font></a><br />
       <ol>
         <li>
-          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= media_token1 %>" />
-          <a href="javascript:void(0);" onclick="call_player('download', '<%= media_token1 %>');">Sample1</a>
+          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token1 %>" />
+          <a href="javascript:void(0);" onclick="call_player('download', '<%= @media_token1 %>');">Sample1</a>
         </li>
         <li>
-          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= media_token2 %>" />
-          <a href="javascript:void(0);" onclick="call_player('download', '<%= media_token2 %>');">Sample2</a>
+          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token2 %>" />
+          <a href="javascript:void(0);" onclick="call_player('download', '<%= @media_token2 %>');">Sample2</a>
         </li>
       </ol>
     </div>
