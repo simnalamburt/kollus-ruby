@@ -1,12 +1,13 @@
 kollus-ruby
 ========
-
-kollus sample code written in ruby
+[kollus][] sample code written in **ruby**
 
 ```sh
+gem install sinatra
 ./sample
+
+# Release mode
+RACK_ENV=production ./sample
 ```
 
-### Requirements
-* ruby
-* sinatra
+[kollus]: http://kollus.com
