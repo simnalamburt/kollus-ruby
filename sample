@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'sinatra'
 require 'yaml'
 require_relative 'api'
 
@@ -9,5 +10,10 @@ account_key = 'catenoid-sample'
 media_token1 = media_link(api_token, account_id, account_key, '7MscjbVl')
 media_token2 = media_link(api_token, account_id, account_key, 'Kcrbjc2S')
 
-puts media_token1
-puts media_token2
+get '/' do
+  foo = 'asdf'
+  erb :index, locals: {
+    media_token1: media_token1,
+    media_token2: media_token2
+  }
+end
