@@ -1,13 +1,9 @@
 kollus-ruby
 ========
-[kollus][] sample code written in **ruby**
+[kollus](http://kollus.com) API written in **ruby**
 
+#### How to run sample
 ```sh
 gem install sinatra
-./sample
-
-# Release mode
-RACK_ENV=production ./sample
+RACK_ENV=production sample/run
 ```
-
-[kollus]: http://kollus.com
