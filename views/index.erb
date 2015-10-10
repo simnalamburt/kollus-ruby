@@ -1,72 +1,114 @@
+<!doctype html>
 <html lang="ko">
 <head>
   <title></title>
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1.0" />
-  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="appable.js"></script>
-  <script src="player.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
 <body>
-  <h1>kollus Mobile 전용플레이어 연동 Sample</h1>
-  <p>
-  <h3>Video G/W 호출</h3>
-  <div id="Div3" style="border:solid;">
-    <ol>
-      <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>">Sample1</a>
-      </li>
-      <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>">Sample2</a>
-      </li>
-    </ol>
+<div class="container">
+  <div class="page-header">
+    <h1>kollus-ruby 연동 예제 <small>Hyeon Kim</small></h1>
   </div>
-  </p>
 
-  <p>
-  <h3>Video G/W 다운로드</h3>
-  <div id="Div2" style="border:solid;">
-    <ol>
-      <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&download&title=asdfasdf">Sample1</a>
-      </li>
-      <li>
-        <a href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&download">Sample2</a>
-      </li>
-    </ol>
-  </div>
-  </p>
+  <div class="row">
+    <div class="col-xs-6">
 
-  <p>
-  <h3>모바일 전용플레이어 스트리밍 호출</h3>
-  <div id="Div4" style="border:solid;">
-    <ol>
-      <li>
-        <a href="javascript:void(0);" onclick="call_player('path', '<%= @media_token1 %>');">Sample1</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" onclick="call_player('path', '<%= @media_token2 %>');">Sample2</a>
-      </li>
-    </ol>
-  </div>
-  </p>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">동영상 보기</h3>
+        </div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-lg" role="group">
+            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&title=Sample%201">Sample1</a>
+            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&title=Sample%202">Sample2</a>
+          </div>
+        </div>
+      </div>
 
-  <p>
-  <h3>모바일 전용플레이어 다운로드 호출</h3>
-  <form name="media_form">
-    <div id="Div1" style="border:solid;">
-      <a href="javascript:void(0);" onclick="start_downloads();"><font color=red>선택 다운로드</font></a><br />
-      <ol>
-        <li>
-          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token1 %>" />
-          <a href="javascript:void(0);" onclick="call_player('download', '<%= @media_token1 %>');">Sample1</a>
-        </li>
-        <li>
-          <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token2 %>" />
-          <a href="javascript:void(0);" onclick="call_player('download', '<%= @media_token2 %>');">Sample2</a>
-        </li>
-      </ol>
     </div>
-  </form>
-  </p>
+    <div class="col-xs-6">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">동영상 다운로드</h3>
+        </div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-lg" role="group">
+            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&download&title=Sample%201">Sample1</a>
+            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&download">Sample2</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">동영상 보기 (모바일)</h3>
+        </div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-lg" role="group">
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media_token1 %>');">모바일용 1</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media_token2 %>');">모바일용 2</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-6">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">동영상 다운로드 (모바일)</h3>
+        </div>
+        <div class="panel-body">
+          <div class="btn-group btn-group-lg" role="group">
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media_token1 %>');">모바일용 1</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media_token2 %>');">모바일용 2</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">여러 동영상 한번에 다운로드 (모바일)</h3>
+        </div>
+        <div class="panel-body">
+
+          <form name="media_form">
+
+            <ul class="list-unstyled">
+              <li>
+                <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token1 %>">
+                모바일용 1
+              </li>
+              <li>
+                <input type="checkbox" name="chk_info" value="http://v.kr.kollus.com/si?key=<%= @media_token2 %>">
+                모바일용 2
+              </li>
+            </ul>
+
+            <a href="javascript:void(0);" onclick="start_downloads();">선택한 항목 다운로드하기</a>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="appable.js"></script>
+<script src="player.js"></script>
 </body>
 </html>
