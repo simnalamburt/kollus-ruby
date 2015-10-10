@@ -1,4 +1,4 @@
-kollus-ruby ![](https://img.shields.io/gem/v/kollus.svg)
+kollus-ruby [![version][]][rubygems]
 ========
 [kollus](http://kollus.com) API written in **ruby**
 
@@ -31,3 +31,6 @@ vim secret.yml
 
 RACK_ENV=production ./run
 ```
+
+[version]: https://img.shields.io/gem/v/kollus.svg
+[rubygems]: https://rubygems.org/gems/kollus
