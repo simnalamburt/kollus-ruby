@@ -1,4 +1,4 @@
-kollus-ruby
+kollus-ruby ![](https://img.shields.io/gem/v/kollus.svg)
 ========
 [kollus](http://kollus.com) API written in **ruby**
 
