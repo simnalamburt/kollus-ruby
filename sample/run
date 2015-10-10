@@ -3,7 +3,8 @@ require 'sinatra'
 require 'yaml'
 require_relative '../lib/kollus'
 
-token = YAML.load_file('secret.yml')['api_token']
+path_secret = File.join File.dirname(__FILE__), 'secret.yml'
+token = YAML.load_file(path_secret)['api_token']
 kollus = Kollus.new 'test', 'catenoid-sample', token
 
 get '/' do
