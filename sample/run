@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 require 'sinatra'
 require 'yaml'
+require 'tilt/erubis'
 require_relative '../lib/kollus'
 
 path_secret = File.join File.dirname(__FILE__), 'secret.yml'
