@@ -67,14 +67,15 @@ Please look at the [sample application](sample) for the working example of kollu
 
 #### How to run sample application
 ```sh
-gem install sinatra thin
+gem install sinatra
 
 cd sample
 cp secret.yml.example secret.yml
 vim secret.yml
 # Type your own API token
 
-RACK_ENV=production ./run
+./run
+# See http://localhost:4567
 ```
 
 [version]: https://img.shields.io/gem/v/kollus.svg

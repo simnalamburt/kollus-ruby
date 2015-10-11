@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'sinatra'
 require 'yaml'
-require 'tilt/erubis'
+require 'tilt/erb'
 require_relative '../lib/kollus'
 
 path_secret = File.join File.dirname(__FILE__), 'secret.yml'
@@ -16,3 +16,12 @@ get '/' do
 
   erb :index
 end
+
+
+__END__
+## Production guide
+
+Install thin and erubis
+
+    gem install thin erubis
+    RACK_ENV=production ./run
