@@ -28,13 +28,30 @@ class Kollus
 
     unless response['error'] == 0
       # TODO: Error handling
-      return false
+      return nil
     end
 
-    response['result']['media_token']
+    MediaSession.new response['result']['media_token']
   end
 
-  def upload_uri(title = nil, expire_time = 600, encrypted = true, audio = false)
+  class MediaSession
+    def initialize token
+      @token = token
+    end
+
+    def url title = nil, download = false
+      url = "http://v.kr.kollus.com/s?key=#{@token}"
+      url += "&download" if download
+      url += "&title=" + URI.encode(title) if title
+      URI(url)
+    end
+
+    def download(title = nil); self.url(title, true) end
+    def token; @token end
+  end
+
+
+  def upload(title = nil, expire_time = 600, encrypted = true, audio = false)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/upload/create_url.json?access_token=' + @token)
     params = {
       # 값의 범위는 0 < expire_time <= 21600 입니다. 빈값을 보내거나 항목 자체를 제거하면 기본 600초로 설정됩니다.
@@ -59,9 +76,21 @@ class Kollus
 
     unless response['error'] == 0
       # TODO: Error handling
-      return false
+      return nil
     end
 
-    response['result']['upload_url']
+    UploadSession.new response['result']
+  end
+
+  class UploadSession
+    def initialize json
+      @url = URI json['upload_url']
+      @key = json['upload_file_key']
+      @expires_at = Time.at json['will_be_expired_at']
+    end
+
+    def url; @url end
+    def key; @key end
+    def expires_at; @expires_at end
   end
 end

@@ -1,11 +1,12 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <title></title>
+  <title>kollus-ruby</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body>
 <div class="container">
@@ -15,7 +16,7 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <form action="<%= @upload_uri %>" method="POST" enctype="multipart/form-data">
+      <form action="<%= @upload.url %>" method="POST" enctype="multipart/form-data">
         <p><input type="file" name="upload-file"></p>
         <input class="btn btn-primary btn-lg" type="submit" value="동영상 업로드">
       </form>
@@ -32,8 +33,8 @@
         </div>
         <div class="panel-body">
           <div class="btn-group btn-group-lg" role="group">
-            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&title=Sample%201">Sample1</a>
-            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&title=Sample%202">Sample2</a>
+            <a class="btn btn-default" href="<%= @media1.url 'Sample 1' %>">Sample1</a>
+            <a class="btn btn-default" href="<%= @media2.url 'Sample 2' %>">Sample2</a>
           </div>
         </div>
       </div>
@@ -47,8 +48,8 @@
         </div>
         <div class="panel-body">
           <div class="btn-group btn-group-lg" role="group">
-            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token1 %>&download&title=Sample%201">Sample1</a>
-            <a class="btn btn-default" href="http://v.kr.kollus.com/s?key=<%= @media_token2 %>&download">Sample2</a>
+            <a class="btn btn-default" href="<%= @media1.download 'Sample 1' %>">Sample1</a>
+            <a class="btn btn-default" href="<%= @media2.download 'Sample 2' %>">Sample2</a>
           </div>
         </div>
       </div>
@@ -66,8 +67,8 @@
         </div>
         <div class="panel-body">
           <div class="btn-group btn-group-lg" role="group">
-            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media_token1 %>');">모바일용 1</a>
-            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media_token2 %>');">모바일용 2</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media1.token %>');">모바일용 1</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('path', '<%= @media2.token %>');">모바일용 2</a>
           </div>
         </div>
       </div>
@@ -81,8 +82,8 @@
         </div>
         <div class="panel-body">
           <div class="btn-group btn-group-lg" role="group">
-            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media_token1 %>');">모바일용 1</a>
-            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media_token2 %>');">모바일용 2</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media1.token %>');">모바일용 1</a>
+            <a class="btn btn-default" href="javascript:void(0);" onclick="call_player('download', '<%= @media2.token %>');">모바일용 2</a>
           </div>
         </div>
       </div>
@@ -116,8 +117,8 @@
   </div>
 
 </div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="appable.js"></script>
 <script src="player.js"></script>
 </body>
