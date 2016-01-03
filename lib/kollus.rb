@@ -8,6 +8,16 @@ class Kollus
     @token = api_token
   end
 
+  def detail(upload_key)
+    api_uri = URI("http://api.kr.kollus.com/0//media/library/media_content/#{upload_key}?access_token=#{@token}")
+
+    response = Net::HTTP.get(api_uri)
+    response = JSON.parse response
+
+    return nil unless response['error'] == 0
+    return response['result']
+  end
+
   def media(media_content_key, media_profile_key = nil, awt_code = nil, expire_time = 7200, play_list = nil)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_media_link_by_userid?access_token=' + @token)
     params = {
