@@ -62,6 +62,7 @@ class Kollus
 
 
   def upload(title = nil, expire_time = 600, encrypted = true, audio = false)
+    tries = 3
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/upload/create_url.json?access_token=' + @token)
     params = {
       # 값의 범위는 0 < expire_time <= 21600 입니다. 빈값을 보내거나 항목 자체를 제거하면 기본 600초로 설정됩니다.
@@ -84,11 +85,12 @@ class Kollus
     response = JSON.parse response.body
     # TODO: Error handling
 
-    unless response['error'] == 0
-      raise KollusError, response
-    end
+    raise KollusError, response unless response['error'] == 0
 
     UploadSession.new response['result']
+  rescue KollusError => e
+    retry unless (tries -= 1).zero?
+    raise e
   end
 
   class UploadSession
