@@ -85,8 +85,7 @@ class Kollus
     # TODO: Error handling
 
     unless response['error'] == 0
-      # TODO: Error handling
-      return nil
+      raise KollusError, response
     end
 
     UploadSession.new response['result']
@@ -102,5 +101,11 @@ class Kollus
     def url; @url end
     def key; @key end
     def expires_at; @expires_at end
+  end
+end
+
+class KollusError < StandardError
+  def initialize(msg = 'Error with Kollus')
+    super(msg)
   end
 end
