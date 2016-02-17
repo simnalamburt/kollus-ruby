@@ -1,6 +1,10 @@
 kollus-ruby [![version][]][rubygems]
 ========
-[kollus](http://kollus.com) API written in **ruby**
+[version]: https://img.shields.io/gem/v/kollus.svg
+[rubygems]: https://rubygems.org/gems/kollus
+
+[kollus](http://kollus.com) API written in **ruby**. [Sample](https://kollus.hyeon.me/)
+
 
 ```ruby
 require 'kollus'
@@ -66,17 +70,8 @@ kollus = Kollus.new account_id, account_key, api_token
 Please look at the [sample application](sample) for the working example of kollus-ruby.
 
 #### How to run sample application
-```sh
-gem install sinatra
+See [kollus-ruby-sample](https://github.com/simnalamburt/kollus-ruby-sample)
 
-cd sample
-cp secret.yml.example secret.yml
-vim secret.yml
-# Type your own API token
+--------
 
-./run
-# See http://localhost:4567
-```
-
-[version]: https://img.shields.io/gem/v/kollus.svg
-[rubygems]: https://rubygems.org/gems/kollus
+[BSD 2-Clause](LICENSE.md)
