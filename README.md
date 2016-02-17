@@ -74,4 +74,4 @@ See [kollus-ruby-sample](https://github.com/simnalamburt/kollus-ruby-sample)
 
 --------
 
-[BSD 2-Clause](LICENSE.md)
+[MIT License](LICENSE.md)
