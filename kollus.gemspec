@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'kollus'
-  s.version     = '0.0.5'
+  s.version     = '0.0.6'
   s.license     = 'MIT'
   s.summary     = 'Kollus API written in ruby'
   s.description = 'Kollus API written in ruby.'
