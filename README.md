@@ -1,11 +1,11 @@
 kollus-ruby [![version][]][rubygems]
 ========
-[kollus] API written in **ruby**. [Click to see sample][sample]
+[kollus] API written in **ruby**. [Click to see a sample][sample]
 
 [version]: https://img.shields.io/gem/v/kollus.svg
 [rubygems]: https://rubygems.org/gems/kollus
 [kollus]: http://kollus.com
-[sample]: https://kollus.hyeon.me
+[sample]: https://github.com/simnalamburt/kollus-ruby-sample
 
 ```ruby
 require 'kollus'
@@ -71,7 +71,7 @@ kollus = Kollus.new account_id, account_key, api_token
 Please look at the [sample application][sample] for the working example of kollus-ruby.
 
 #### How to run sample application
-See [kollus-ruby-sample](https://github.com/simnalamburt/kollus-ruby-sample)
+See [kollus-ruby-sample][sample]
 
 --------
 
