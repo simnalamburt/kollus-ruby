@@ -8,7 +8,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'kollus'
-  s.version     = '0.1.1'
+  s.version     = '0.1.2'
   s.licenses    = ['Apache-2.0', 'MIT']
   s.summary     = 'Kollus API written in ruby'
   s.description = 'Kollus API written in ruby.'
