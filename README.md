@@ -10,10 +10,10 @@ kollus-ruby [![version][]][rubygems]
 ```ruby
 require 'kollus'
 
-kollus = Kollus.new 'test', 'catenoid-sample', '1234567890abcdef' # Use your own one
+kollus = Kollus.new 'catenoid-sample', '1234567890abcdef' # Use your own one
 
 # 동영상 플레이하기
-sample = kollus.media '7MscjbVl'
+sample = kollus.media '7MscjbVl', 'client_user_id'
 
 sample.url        # http://v.kr.kollus.co...61|V1.0
 sample.download   # http://v.kr.kollus.co...61|V1.0&download
@@ -45,14 +45,13 @@ You can simply drop this gem into your ruby web application.
 ## Controller
 
 # Use your own one
-account_id = 'mycompany'
 account_key = 'mycompany-key'
 api_token = 'abcdef0123456789'
 
-kollus = Kollus.new account_id, account_key, api_token
+kollus = Kollus.new account_key, api_token
 
-@media1 = kollus.media '7MscjbVl'
-@media2 = kollus.media 'Kcrbjc2S'
+@media1 = kollus.media '7MscjbVl', 'user-1'
+@media2 = kollus.media 'Kcrbjc2S', 'user-2'
 @upload = kollus.upload
 ```
 
