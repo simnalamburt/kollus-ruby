@@ -17,7 +17,7 @@ class Kollus
     return response['result']
   end
 
-  def media(media_content_key, client_user_id, media_profile_key = nil, awt_code = nil, expire_time = 7200, play_list = nil)
+  def media(media_content_key, client_user_id, media_profile_key = nil, awt_code = nil, expire_time = 7200, playlist_flag = nil)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_media_link_by_userid?access_token=' + @token)
     params = {
       client_user_id: client_user_id,
@@ -26,7 +26,7 @@ class Kollus
       media_profile_key: media_profile_key,
       awt_code: awt_code,
       expire_time: expire_time,
-      play_list: play_list
+      playlist_flag: playlist_flag
     }
 
     response = Net::HTTP.post_form(api_uri, params)
