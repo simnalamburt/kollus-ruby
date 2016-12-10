@@ -60,14 +60,14 @@ class Kollus
   end
 
 
-  def upload(title = nil, expire_time = 600, encrypted = true, audio = false)
+  def upload(category_key = nil, title = nil, expire_time = 600, encrypted = true, audio = false)
     tries = 3
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/upload/create_url.json?access_token=' + @token)
     params = {
       # 값의 범위는 0 < expire_time <= 21600 입니다. 빈값을 보내거나 항목 자체를 제거하면 기본 600초로 설정됩니다.
       expire_time: expire_time,
       # 업로드한 파일이 속할 카테고리의 키(API를 이용하여 확득 가능)입니다. 빈값을 보내 거나 항목 자체를 제거하면 '없음'에 속합니다.
-      category_key: 'bw2z2ngbkatkqx77',
+      category_key: category_key,
       # 입력한 제목을 컨텐츠의 제목으로 강제지정합니다. 이 값을 보내지 않거나 빈값으로 보내면 기본 적으로 파일명이 제목으로 사용됩니다.
       title: title,
       # 0은 일반 업로드, 1은 암호화 업로드입니다. 암호화 업로드시 파일이 암호화 되어 Kollus의 전용 플레이어로만 재생됩니다.
