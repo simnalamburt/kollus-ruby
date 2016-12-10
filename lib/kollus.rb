@@ -2,8 +2,7 @@ require 'net/http'
 require 'json'
 
 class Kollus
-  def initialize(account_id, account_key, api_token)
-    @id = account_id
+  def initialize(account_key, api_token)
     @key = account_key
     @token = api_token
   end
@@ -18,10 +17,10 @@ class Kollus
     return response['result']
   end
 
-  def media(media_content_key, user_id = 'not_logged_on', media_profile_key = nil, awt_code = nil, expire_time = 7200, play_list = nil)
+  def media(media_content_key, client_user_id, media_profile_key = nil, awt_code = nil, expire_time = 7200, play_list = nil)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_media_link_by_userid?access_token=' + @token)
     params = {
-      client_user_id: user_id,
+      client_user_id: client_user_id,
       security_key: @key,
       media_content_key: media_content_key,
       media_profile_key: media_profile_key,
