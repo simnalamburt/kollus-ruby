@@ -1,11 +1,16 @@
+<!--
+Copyright 2015-2016 Hyeon Kim
+
+Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
+<LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
+option. This file may not be copied, modified, or distributed
+except according to those terms.
+-->
+
 kollus-ruby [![version][]][rubygems]
 ========
 [kollus] API written in **ruby**. [Click to see a sample][sample]
-
-[version]: https://img.shields.io/gem/v/kollus.svg
-[rubygems]: https://rubygems.org/gems/kollus
-[kollus]: http://kollus.com
-[sample]: https://github.com/simnalamburt/kollus-ruby-sample
 
 ```ruby
 require 'kollus'
@@ -72,6 +77,16 @@ Please look at the [sample application][sample] for the working example of kollu
 #### How to run sample application
 See [kollus-ruby-sample][sample]
 
---------
+<br>
 
-[MIT License](LICENSE.md)
+--------
+*kollus-ruby* is primarily distributed under the terms of both the [MIT license]
+and the [Apache License (Version 2.0)]. See [COPYRIGHT] for details.
+
+[version]: https://img.shields.io/gem/v/kollus.svg
+[rubygems]: https://rubygems.org/gems/kollus
+[kollus]: http://kollus.com
+[sample]: https://github.com/simnalamburt/kollus-ruby-sample
+[MIT license]: LICENSE-MIT
+[Apache License (Version 2.0)]: LICENSE-APACHE
+[COPYRIGHT]: COPYRIGHT
