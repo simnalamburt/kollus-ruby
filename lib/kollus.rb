@@ -25,6 +25,23 @@ class Kollus
     return response['result']
   end
 
+  def encrypt(source_string)
+    api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_kollus_encrypt.json?access_token=' + @token)
+    params = {
+      source_string: source_string
+    }
+
+    response = Net::HTTP.post_form(api_uri, params)
+    # TODO: Error handling
+
+    response = JSON.parse response.body
+    # TODO: Error handling
+
+    raise KollusError, response unless response['error'] == 0
+
+    response['result']['encrypt_string']
+  end
+
   def media(media_content_key, client_user_id, media_profile_key = nil, awt_code = nil, expire_time = 7200, playlist_flag = nil)
     api_uri = URI('http://api.kr.kollus.com/0/media_auth/media_token/get_media_link_by_userid?access_token=' + @token)
     params = {
